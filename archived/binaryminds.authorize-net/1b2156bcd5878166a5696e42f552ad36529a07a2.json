@@ -1,0 +1,34 @@
+{
+    "manifests": {
+        "binaryminds/authorize-net": {
+            "manifest": {
+                "bundles": {
+                    "AuthorizeNet\\AuthorizeNetBundle": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%"
+                },
+                "env": {
+                    "AUTHORIZE_NET_API_LOGIN_ID": "",
+                    "AUTHORIZE_NET_TRANSACTION_KEY": "",
+                    "AUTHORIZE_NET_KEY": ""
+                }
+            },
+            "files": {
+                "config/packages/authorize_net.yaml": {
+                    "contents": [
+                        "authorize_net:",
+                        "    apiLoginId: '%env(AUTHORIZE_NET_API_LOGIN_ID)%'",
+                        "    transactionKey: '%env(AUTHORIZE_NET_TRANSACTION_KEY)%'",
+                        "    key: '%env(AUTHORIZE_NET_KEY)%'",
+                        ""
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "1b2156bcd5878166a5696e42f552ad36529a07a2"
+        }
+    }
+}
